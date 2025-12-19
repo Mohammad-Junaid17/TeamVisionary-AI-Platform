@@ -19,6 +19,10 @@ Before running this project, ensure you have the following installed:
       * *Download "Core Zip" from [tomcat.apache.org](https://tomcat.apache.org/download-10.cgi) and extract it.*
 
 -----
+Firstly **Clone the Repository**
+    ```bash
+    git clone [https://github.com/Mohammad-Junaid17/TeamVisionary-AI-Platform.git](https://github.com/Mohammad-Junaid17/TeamVisionary-AI-Platform.git)
+    ```
 
 ## Step 1: Database Setup
 
@@ -109,8 +113,11 @@ INSERT INTO usage_logs (resource_type, usage_value) VALUES
 -----
 
 ## Step 2: Project Setup in IntelliJ
-
-1.  **Open Project:** Open the `AIResearchPlatform` folder in IntelliJ.
+    * Open the project.
+    * Configure **Smart Tomcat**.
+    * Click **Run** (Green Play Button).
+    * Access the app at: `http://localhost:8080/ai/login.jsp`
+(1.  **Open Project:** Open the `AIResearchPlatform` folder in IntelliJ.
 2.  **Load Maven Dependencies:**
       * Open the `pom.xml` file.
       * Look for a floating **"M" icon** (Maven) in the top-right corner of the editor window and click it.
@@ -119,7 +126,7 @@ INSERT INTO usage_logs (resource_type, usage_value) VALUES
       * Navigate to `src` \> `main` \> `webapp`.
       * Right-click `webapp` \> **New** \> **Directory**.
       * Name it: `uploads`.
-      * *This is where researcher files will be saved.*
+      * *This is where researcher files will be saved.*)
 
 -----
 
@@ -173,6 +180,23 @@ Since you are using IntelliJ Community Edition, use the **Smart Tomcat** plugin.
   * **Email:** `smith@ai.com`
   * **Password:** `1234`
   * *Features: Upload datasets, train models (simulation), track experiments, collaborate.*
+Testing Guide (For Evaluators)
+
+### The "Theme" Test (Innovation)
+1.  Go to the Login Page.
+2.  Click **"Researcher"**. Notice the UI color shifts to **Teal**.
+3.  Click **"Admin"**. Notice the UI color shifts to **Blue**.
+
+### The "Crash" Test (Robustness)
+1.  Log in to the platform.
+2.  Manually type a broken URL (e.g., `.../ai/pizza.jsp`).
+3.  **Result:** You will be safely redirected to the custom **Error Page** instead of crashing.
+
+### The "Security" Test
+1.  Copy the Dashboard URL.
+2.  Log out.
+3.  Paste the URL back into the browser.
+4.  **Result:** Access is denied, and you are redirected to Login.
 
 -----
 
