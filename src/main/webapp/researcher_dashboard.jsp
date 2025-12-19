@@ -1,3 +1,10 @@
+<%
+    // Security Check: If user is not logged in, kick them out
+    if (session.getAttribute("user") == null) {
+        response.sendRedirect("login.jsp?error=unauthorized");
+        return;
+    }
+%>
 <%@ page import="com.aiplatform.dao.*, com.aiplatform.model.User, java.util.List" %>
 <%
     // 1. Security Check
